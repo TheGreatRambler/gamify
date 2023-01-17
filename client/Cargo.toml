@@ -1,0 +1,24 @@
+[package]
+name = "client"
+version = "0.0.1"
+authors = ["Addison Hart <tgr@tgrcode.com>"]
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+gloo = "0.8"
+js-sys = "0.3"
+yew = { version = "0.20.0", features = ["csr"] }
+wasm-bindgen = "0.2"
+speedy = "0.8.5"
+instant = { version = "0.1.12", features = ["wasm-bindgen"] }
+md5 = "0.7.0"
+
+[dependencies.web-sys]
+version = "0.3.60"
+features = [
+	"HtmlInputElement",
+	"Element",
+	"HtmlCollection",
+	"DomTokenList",
+]

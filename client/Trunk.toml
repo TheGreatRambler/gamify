@@ -1,0 +1,27 @@
+# Example here https://github.com/thedodd/trunk/blob/master/Trunk.toml
+
+[build]
+target = "index.html"
+release = true
+dist = "dist"
+public_url = "/"
+filehash = true
+
+[watch]
+# Paths to watch. The `build.target`'s parent folder is watched by default.
+watch = []
+# Paths to ignore.
+ignore = []
+
+[serve]
+address = "127.0.0.1"
+port = 8080
+# Open a browser tab once the initial build is complete.
+open = false
+# Disable auto-reload of the web app.
+no_autoreload = true
+
+[[hooks]]
+stage = "pre_build"
+command = "sh"
+command_arguments = ["-c", "tailwindcss -c ./tailwind.config.js -o ./tailwind.css --minify"]
